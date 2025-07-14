@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     cssCodeSplit: false,
-    minify: "terser",
     rollupOptions: {
       output: {
         manualChunks: undefined,

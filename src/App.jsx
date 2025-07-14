@@ -381,10 +381,14 @@ const HappyHomeMovers = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Contact Info */}
               <div>
-                <label className="block text-gold font-semibold mb-2">
+                <label
+                  for="name"
+                  className="block text-gold font-semibold mb-2"
+                >
                   Name *
                 </label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   value={formData.name}
@@ -394,10 +398,14 @@ const HappyHomeMovers = () => {
                 />
               </div>
               <div>
-                <label className="block text-gold font-semibold mb-2">
+                <label
+                  for="email"
+                  className="block text-gold font-semibold mb-2"
+                >
                   Email *
                 </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={formData.email}
@@ -407,10 +415,14 @@ const HappyHomeMovers = () => {
                 />
               </div>
               <div>
-                <label className="block text-gold font-semibold mb-2">
+                <label
+                  for="phone"
+                  className="block text-gold font-semibold mb-2"
+                >
                   Phone *
                 </label>
                 <input
+                  id="phone"
                   type="tel"
                   name="phone"
                   value={formData.phone}
@@ -420,10 +432,14 @@ const HappyHomeMovers = () => {
                 />
               </div>
               <div>
-                <label className="block text-gold font-semibold mb-2">
+                <label
+                  for="moveType"
+                  className="block text-gold font-semibold mb-2"
+                >
                   Move Type *
                 </label>
                 <select
+                  id="moveType"
                   name="moveType"
                   value={formData.moveType}
                   onChange={handleInputChange}
@@ -437,10 +453,14 @@ const HappyHomeMovers = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-gold font-semibold mb-2">
+                <label
+                  for="homeType"
+                  className="block text-gold font-semibold mb-2"
+                >
                   Home Type
                 </label>
                 <select
+                  id="homeType"
                   name="homeType"
                   value={formData.homeType}
                   onChange={handleInputChange}

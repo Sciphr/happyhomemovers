@@ -176,7 +176,7 @@ const HappyHomeMovers = () => {
                   />
                   <div className="absolute inset-0 bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </div>
-                <h4 className="text-xl font-bold text-gold mb-2">Co-Founder</h4>
+                <h4 className="text-xl font-bold text-gold mb-2">Aaron</h4>
                 <p className="text-gray-300">
                   Dedicated to making your move seamless
                 </p>
@@ -195,7 +195,7 @@ const HappyHomeMovers = () => {
                   />
                   <div className="absolute inset-0 bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </div>
-                <h4 className="text-xl font-bold text-gold mb-2">Co-Founder</h4>
+                <h4 className="text-xl font-bold text-gold mb-2">Mandeep</h4>
                 <p className="text-gray-300">
                   Committed to exceptional service
                 </p>

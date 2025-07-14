@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Phone,
-  Mail,
-  MapPin,
   Users,
   Shield,
   Package,
   Clock,
-  Star,
   CheckCircle,
 } from "lucide-react";
+// import emailjs from "emailjs-com";
 
 const HappyHomeMovers = () => {
   const [formData, setFormData] = useState({
@@ -25,9 +23,10 @@ const HappyHomeMovers = () => {
   });
 
   const handleSubmit = () => {
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    alert("Thank you for your submission! We will contact you soon.");
+    // emailjs.send("service_id", "template_id", formData, "user_id").then(() => {
+    //   alert("Message sent successfully!");
+    // });
+    console.log("Form Submitted!");
   };
 
   const handleInputChange = (e) => {
@@ -56,7 +55,10 @@ const HappyHomeMovers = () => {
                 className="flex items-center space-x-2 bg-gold text-black px-4 py-2 rounded-lg hover:bg-gold-light transition-colors cursor-pointer"
               >
                 <Phone className="w-5 h-5" />
-                <span className="font-semibold">Call for Quote</span>
+                <span className="font-semibold hidden sm:inline">
+                  Call for Quote
+                </span>
+                <span className="font-semibold sm:hidden">Call</span>
               </a>
             </div>
           </div>

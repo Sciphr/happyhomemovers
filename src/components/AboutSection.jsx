@@ -71,13 +71,13 @@ const AboutSection = () => {
             <TeamMember
               name="Aaron"
               image="/worker1.webp"
-              phone="+1234567890"
+              phone="4038727710"
               description="Dedicated to making your move seamless"
             />
             <TeamMember
               name="Mandeep"
               image="/worker2.webp"
-              phone="+0987654321"
+              phone="4378550295"
               description="Committed to exceptional service"
             />
           </div>

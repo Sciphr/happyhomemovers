@@ -7,7 +7,7 @@ import {
   Clock,
   CheckCircle,
 } from "lucide-react";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
 const HappyHomeMovers = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +22,50 @@ const HappyHomeMovers = () => {
     formType: "inquiry", // 'inquiry' or 'booking'
   });
 
+  const scrollToTeam = () => {
+    const teamSection = document.getElementById("team-section");
+    teamSection.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handleSubmit = () => {
-    // emailjs.send("service_id", "template_id", formData, "user_id").then(() => {
-    //   alert("Message sent successfully!");
-    // });
-    console.log("Form Submitted!");
+    emailjs
+      .send(
+        "service_52cfme4", // Your Service ID
+        "template_hlg6rgq", // Your Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          moveType: formData.moveType,
+          homeType: formData.homeType,
+          packing: formData.packing ? "Yes" : "No",
+          insurance: formData.insurance ? "Yes" : "No",
+          message: formData.message,
+          formType:
+            formData.formType === "inquiry"
+              ? "Pricing Inquiry"
+              : "Move Booking",
+        },
+        "jdxfWwR1ZIeqq1rMi" // Your Public Key
+      )
+      .then(() => {
+        alert("Message sent successfully! We will contact you soon.");
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          moveType: "",
+          homeType: "",
+          packing: false,
+          insurance: false,
+          message: "",
+          formType: "inquiry",
+        });
+      })
+      .catch(() => {
+        alert("Failed to send message. Please try again.");
+      });
   };
 
   const handleInputChange = (e) => {
@@ -50,8 +89,8 @@ const HappyHomeMovers = () => {
               <p className="text-gray-300 mt-1">Making Your Move Stress-Free</p>
             </div>
             <div className="flex items-center space-x-6">
-              <a
-                href="tel:+1234567890"
+              <button
+                onClick={scrollToTeam}
                 className="flex items-center space-x-2 bg-gold text-black px-4 py-2 rounded-lg hover:bg-gold-light transition-colors cursor-pointer"
               >
                 <Phone className="w-5 h-5" />
@@ -59,7 +98,7 @@ const HappyHomeMovers = () => {
                   Call for Quote
                 </span>
                 <span className="font-semibold sm:hidden">Call</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -151,7 +190,7 @@ const HappyHomeMovers = () => {
           </div>
 
           {/* Team Section */}
-          <div className="mt-16">
+          <div id="team-section" className="mt-16">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-gold mb-4">
                 Meet Our Team
@@ -177,9 +216,16 @@ const HappyHomeMovers = () => {
                   <div className="absolute inset-0 bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </div>
                 <h4 className="text-xl font-bold text-gold mb-2">Aaron</h4>
-                <p className="text-gray-300">
+                <p className="text-gray-300 mb-4">
                   Dedicated to making your move seamless
                 </p>
+                <a
+                  href="tel:+1234567890"
+                  className="inline-flex items-center space-x-2 bg-gold text-black px-4 py-2 rounded-lg hover:bg-gold-light transition-colors font-semibold"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call Aaron</span>
+                </a>
               </div>
 
               <div className="text-center group">
@@ -196,9 +242,16 @@ const HappyHomeMovers = () => {
                   <div className="absolute inset-0 bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </div>
                 <h4 className="text-xl font-bold text-gold mb-2">Mandeep</h4>
-                <p className="text-gray-300">
+                <p className="text-gray-300 mb-4">
                   Committed to exceptional service
                 </p>
+                <a
+                  href="tel:+0987654321"
+                  className="inline-flex items-center space-x-2 bg-gold text-black px-4 py-2 rounded-lg hover:bg-gold-light transition-colors font-semibold"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call Mandeep</span>
+                </a>
               </div>
             </div>
           </div>
@@ -382,7 +435,7 @@ const HappyHomeMovers = () => {
               {/* Contact Info */}
               <div>
                 <label
-                  for="name"
+                  htmlFor="name"
                   className="block text-gold font-semibold mb-2"
                 >
                   Name *
@@ -399,7 +452,7 @@ const HappyHomeMovers = () => {
               </div>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block text-gold font-semibold mb-2"
                 >
                   Email *
@@ -416,7 +469,7 @@ const HappyHomeMovers = () => {
               </div>
               <div>
                 <label
-                  for="phone"
+                  htmlFor="phone"
                   className="block text-gold font-semibold mb-2"
                 >
                   Phone *
@@ -433,7 +486,7 @@ const HappyHomeMovers = () => {
               </div>
               <div>
                 <label
-                  for="moveType"
+                  htmlFor="moveType"
                   className="block text-gold font-semibold mb-2"
                 >
                   Move Type *
@@ -454,7 +507,7 @@ const HappyHomeMovers = () => {
               </div>
               <div>
                 <label
-                  for="homeType"
+                  htmlFor="homeType"
                   className="block text-gold font-semibold mb-2"
                 >
                   Home Type

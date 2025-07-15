@@ -39,7 +39,7 @@ const Toast = ({ message, type = "success", isVisible, onClose }) => {
           <div className="ml-4 flex-shrink-0">
             <button
               onClick={onClose}
-              className={`${textColor} hover:text-white transition-colors duration-200`}
+              className={`${textColor} hover:text-white transition-colors duration-200 cursor-pointer`}
             >
               <X className="h-4 w-4" />
             </button>

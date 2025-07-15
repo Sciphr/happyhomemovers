@@ -216,7 +216,7 @@ const ContactForm = ({
       <button
         type="button"
         onClick={handleSubmit}
-        className="w-full mt-6 bg-gold text-black py-4 px-6 rounded-lg font-bold text-lg hover:bg-gold-light hover:shadow-lg hover:scale-105 transition-all duration-200"
+        className="w-full mt-6 bg-gold cursor-pointer text-black py-4 px-6 rounded-lg font-bold text-lg hover:bg-gold-light hover:shadow-lg hover:scale-105 transition-all duration-200"
       >
         {formData.formType === "inquiry" ? "Get Quote" : "Book Move"}
       </button>

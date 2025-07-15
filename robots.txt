@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://happyhomemovers.vercel.app/sitemap.xml
+
+# Block access to sensitive files
+Disallow: /.env
+Disallow: /src/
+Disallow: /node_modules/
